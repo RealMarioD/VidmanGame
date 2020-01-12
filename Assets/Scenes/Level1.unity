@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 951471709}
   - component: {fileID: 951471712}
   m_Layer: 8
-  m_Name: groundShape
+  m_Name: ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -211,7 +211,7 @@ MonoBehaviour:
       bevelSize: 0
       spriteIndex: 0
       corner: 1
-    - position: {x: 1.1288204, y: 3.4074063, z: 0}
+    - position: {x: 1.570113, y: 2.8970337, z: 0}
       leftTangent: {x: 0, y: 0, z: 0}
       rightTangent: {x: 0, y: 0, z: 0}
       mode: 0
@@ -220,7 +220,7 @@ MonoBehaviour:
       bevelSize: 0
       spriteIndex: 0
       corner: 1
-    - position: {x: 2.1502767, y: 3.2165103, z: 0}
+    - position: {x: 5.556674, y: 5.942511, z: 0}
       leftTangent: {x: 0, y: 0, z: 0}
       rightTangent: {x: 0, y: 0, z: 0}
       mode: 0
@@ -229,7 +229,7 @@ MonoBehaviour:
       bevelSize: 0
       spriteIndex: 0
       corner: 1
-    - position: {x: 1.8688679, y: 1.4766704, z: 0}
+    - position: {x: 7.3323083, y: 3.1092792, z: 0}
       leftTangent: {x: 0, y: 0, z: 0}
       rightTangent: {x: 0, y: 0, z: 0}
       mode: 0
@@ -238,7 +238,7 @@ MonoBehaviour:
       bevelSize: 0
       spriteIndex: 0
       corner: 1
-    - position: {x: 1.5514412, y: -1.0626267, z: 0}
+    - position: {x: 7.262062, y: -0.37874386, z: 0}
       leftTangent: {x: 0, y: 0, z: 0}
       rightTangent: {x: 0, y: 0, z: 0}
       mode: 0
@@ -254,13 +254,13 @@ MonoBehaviour:
   m_AdaptiveUV: 1
   m_StretchUV: 0
   m_WorldSpaceUV: 0
-  m_CornerAngleThreshold: 30
+  m_CornerAngleThreshold: 45
   m_ColliderDetail: 16
   m_ColliderOffset: 0.4
   m_UpdateCollider: 1
   m_OptimizeCollider: 1
   m_OptimizeGeometry: 1
-  m_EnableTangents: 0
+  m_EnableTangents: 1
 --- !u!1971053207 &951471710
 SpriteShapeRenderer:
   m_ObjectHideFlags: 0
@@ -316,8 +316,8 @@ SpriteShapeRenderer:
   - {fileID: 21300000, guid: 52ceac21249f2c1409e79c8d108dd0e5, type: 3}
   - {fileID: 21300000, guid: 705749c71b38cb04d85dc74bfb4053e1, type: 3}
   m_LocalAABB:
-    m_Center: {x: -1.2972667, y: 0.73654103, z: -0.005045}
-    m_Extent: {x: 3.8993943, y: 3.205644, z: 0.005045}
+    m_Center: {x: 1.3252964, y: 1.8210297, z: -0.005045}
+    m_Extent: {x: 6.5219564, y: 4.2901325, z: 0.005045}
 --- !u!4 &951471711
 Transform:
   m_ObjectHideFlags: 0
@@ -349,19 +349,18 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -0.4854933, y: -0.7058816}
+  - {x: -0.43842655, y: -0.60301036}
   - {x: -1.3424004, y: -2.5827007}
   - {x: -3.540415, y: -1.7808509}
   - {x: -2.8898706, y: 1.5490366}
   - {x: -5.6550493, y: 1.808822}
-  - {x: -4.5438666, y: 3.8442059}
-  - {x: 1.1671112, y: 3.8071659}
-  - {x: 2.6074023, y: 3.538005}
-  - {x: 2.2362936, y: 1.2431335}
-  - {x: 2.0063539, y: -0.6482506}
-  - {x: 1.8848952, y: -1.6198742}
-  - {x: -0.39763016, y: -0.73976207}
-  - {x: -0.4854933, y: -0.7058816}
+  - {x: -4.532351, y: 3.8652976}
+  - {x: 1.4514767, y: 3.3097682}
+  - {x: 5.662717, y: 6.5268855}
+  - {x: 7.7346296, y: 3.2205665}
+  - {x: 7.6539054, y: -0.7878044}
+  - {x: -0.372508, y: -0.6045156}
+  - {x: -0.43842655, y: -0.60301036}
 --- !u!1001 &225246749635370482
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -451,12 +450,12 @@ PrefabInstance:
     - target: {fileID: 6096731839997327072, guid: 3df216d88dad7ec41ab0624d5eeb480f,
         type: 3}
       propertyPath: m_Spline.m_ControlPoints.Array.data[6].position.x
-      value: 1.1288204
+      value: 1.570113
       objectReference: {fileID: 0}
     - target: {fileID: 6096731839997327072, guid: 3df216d88dad7ec41ab0624d5eeb480f,
         type: 3}
       propertyPath: m_Spline.m_ControlPoints.Array.data[6].position.y
-      value: 3.4074063
+      value: 2.8970337
       objectReference: {fileID: 0}
     - target: {fileID: 6096731839997327072, guid: 3df216d88dad7ec41ab0624d5eeb480f,
         type: 3}
@@ -491,12 +490,12 @@ PrefabInstance:
     - target: {fileID: 6096731839997327072, guid: 3df216d88dad7ec41ab0624d5eeb480f,
         type: 3}
       propertyPath: m_Spline.m_ControlPoints.Array.data[7].position.y
-      value: 3.2165103
+      value: 5.942511
       objectReference: {fileID: 0}
     - target: {fileID: 6096731839997327072, guid: 3df216d88dad7ec41ab0624d5eeb480f,
         type: 3}
       propertyPath: m_Spline.m_ControlPoints.Array.data[7].position.x
-      value: 2.1502767
+      value: 5.556674
       objectReference: {fileID: 0}
     - target: {fileID: 6096731839997327072, guid: 3df216d88dad7ec41ab0624d5eeb480f,
         type: 3}
@@ -531,12 +530,12 @@ PrefabInstance:
     - target: {fileID: 6096731839997327072, guid: 3df216d88dad7ec41ab0624d5eeb480f,
         type: 3}
       propertyPath: m_Spline.m_ControlPoints.Array.data[8].position.x
-      value: 1.8688679
+      value: 7.3323083
       objectReference: {fileID: 0}
     - target: {fileID: 6096731839997327072, guid: 3df216d88dad7ec41ab0624d5eeb480f,
         type: 3}
       propertyPath: m_Spline.m_ControlPoints.Array.data[8].position.y
-      value: 1.4766704
+      value: 3.1092792
       objectReference: {fileID: 0}
     - target: {fileID: 6096731839997327072, guid: 3df216d88dad7ec41ab0624d5eeb480f,
         type: 3}
@@ -563,10 +562,35 @@ PrefabInstance:
       propertyPath: m_StretchUV
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6096731839997327072, guid: 3df216d88dad7ec41ab0624d5eeb480f,
+        type: 3}
+      propertyPath: m_CornerAngleThreshold
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 6096731839997327072, guid: 3df216d88dad7ec41ab0624d5eeb480f,
+        type: 3}
+      propertyPath: m_EnableTangents
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6096731839997327072, guid: 3df216d88dad7ec41ab0624d5eeb480f,
+        type: 3}
+      propertyPath: m_AdaptiveUV
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6096731839997327072, guid: 3df216d88dad7ec41ab0624d5eeb480f,
+        type: 3}
+      propertyPath: m_SplineDetail
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 6096731839997327072, guid: 3df216d88dad7ec41ab0624d5eeb480f,
+        type: 3}
+      propertyPath: m_Spline.m_ControlPoints.Array.data[7].corner
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6096731839997327073, guid: 3df216d88dad7ec41ab0624d5eeb480f,
         type: 3}
       propertyPath: m_Name
-      value: groundShape
+      value: ground
       objectReference: {fileID: 0}
     - target: {fileID: 6096731839997327073, guid: 3df216d88dad7ec41ab0624d5eeb480f,
         type: 3}

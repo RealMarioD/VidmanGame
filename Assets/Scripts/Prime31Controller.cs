@@ -59,11 +59,6 @@ namespace Prime31 {
 
         #region events, properties and fields
 
-        public event Action<RaycastHit2D> onControllerCollidedEvent;
-        public event Action<Collider2D> onTriggerEnterEvent;
-        public event Action<Collider2D> onTriggerStayEvent;
-        public event Action<Collider2D> onTriggerExitEvent;
-
 
         /// <summary>
         /// when true, one way platforms will be ignored when moving vertically for a single frame
@@ -193,21 +188,6 @@ namespace Prime31 {
             }
         }
 
-
-        public void OnTriggerEnter2D(Collider2D col) {
-            onTriggerEnterEvent?.Invoke(col);
-        }
-
-
-        public void OnTriggerStay2D(Collider2D col) {
-            onTriggerStayEvent?.Invoke(col);
-        }
-
-
-        public void OnTriggerExit2D(Collider2D col) {
-            onTriggerExitEvent?.Invoke(col);
-        }
-
         #endregion
 
 
@@ -242,11 +222,11 @@ namespace Prime31 {
                 handleVerticalSlope(ref deltaMovement);
 
             // now we check movement in the horizontal dir
-            if (Math.Abs(deltaMovement.x) > 0.001)
+            if (Math.Abs(deltaMovement.x) > 0.0001)
                 moveHorizontally(ref deltaMovement);
 
             // next, check movement in the vertical dir
-            if (Math.Abs(deltaMovement.y) > 0.001)
+            if (Math.Abs(deltaMovement.y) > 0.0001)
                 moveVertically(ref deltaMovement);
 
             // move then update our state
@@ -264,12 +244,6 @@ namespace Prime31 {
             // if we are going up a slope we artificially set a y velocity so we need to zero it out here
             if (_isGoingUpSlope)
                 velocity.y = 0;
-
-            // send off the collision events if we have a listener
-            if (onControllerCollidedEvent != null) {
-                foreach (var hit in _raycastHitsThisFrame)
-                    onControllerCollidedEvent(hit);
-            }
 
             ignoreOneWayPlatformsThisFrame = false;
         }
@@ -403,7 +377,8 @@ namespace Prime31 {
                 // TODO: this uses a magic number which isn't ideal! The alternative is to have the user pass in if there is a jump this frame
                 if (deltaMovement.y < jumpingThreshold) {
                     // apply the slopeModifier to slow our movement up the slope
-                    var slopeModifier = slopeSpeedMultiplier.Evaluate(angle);
+                    //var slopeModifier = slopeSpeedMultiplier.Evaluate(angle);
+                    var slopeModifier = 1;
                     deltaMovement.x *= slopeModifier;
 
                     // we dont set collisions on the sides for this since a slope is not technically a side collision.
@@ -515,7 +490,7 @@ namespace Prime31 {
             if (_raycastHit) {
                 // bail out if we have no slope
                 var angle = Vector2.Angle(_raycastHit.normal, Vector2.up);
-                if (Math.Abs(angle) < 0.001)
+                if (Math.Abs(angle) < 0.0001)
                     return;
 
                 // we are moving down the slope if our normal and movement direction are in the same x direction
@@ -523,12 +498,13 @@ namespace Prime31 {
                     Math.Abs(Mathf.Sign(_raycastHit.normal.x) - Mathf.Sign(deltaMovement.x)) < 0.001;
                 if (isMovingDownSlope) {
                     // going down we want to speed up in most cases so the slopeSpeedMultiplier curve should be > 1 for negative angles
-                    var slopeModifier = slopeSpeedMultiplier.Evaluate(-angle);
+                    //var slopeModifier = slopeSpeedMultiplier.Evaluate(-angle);
+                    var slopeModifier = 1;
                     // we add the extra downward movement here to ensure we "stick" to the surface below
                     deltaMovement.y += _raycastHit.point.y - slopeRay.y - skinWidth;
-                    deltaMovement = new Vector3(0, deltaMovement.y, 0) +
-                        Quaternion.AngleAxis(-angle, Vector3.forward) *
-                        new Vector3(deltaMovement.x * slopeModifier, 0, 0);
+                    //deltaMovement = new Vector3(0, deltaMovement.y, 0) +
+                    //    Quaternion.AngleAxis(-angle, Vector3.forward) *
+                    //    new Vector3(deltaMovement.x * slopeModifier, 0, 0);
                     collisionState.movingDownSlope = true;
                     collisionState.slopeAngle = angle;
                 }
