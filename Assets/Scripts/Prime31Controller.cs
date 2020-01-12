@@ -7,8 +7,9 @@ using Debug = UnityEngine.Debug;
 
 namespace Prime31 {
 
+
     [RequireComponent(typeof(BoxCollider2D), typeof(Rigidbody2D))]
-    public class CharacterController2D : MonoBehaviour {
+    public class Prime31Controller : MonoBehaviour {
 
         #region internal types
 
@@ -185,11 +186,11 @@ namespace Prime31 {
             skinWidth = _skinWidth;
 
             // we want to set our CC2D to ignore all collision layers except what is in our triggerMask
-            //for (var i = 0; i < 32; i++) {
+            for (var i = 0; i < 32; i++) {
             // see if our triggerMask contains this layer and if not ignore it
-            //    if ((triggerMask.value & 1 << i) == 0)
-            //        Physics2D.IgnoreLayerCollision(gameObject.layer, i);
-            //}
+                if ((triggerMask.value & 1 << i) == 0)
+                    Physics2D.IgnoreLayerCollision(gameObject.layer, i);
+            }
         }
 
 
