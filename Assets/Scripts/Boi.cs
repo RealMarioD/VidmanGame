@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using Prime31;
+﻿using Prime31;
 using UnityEngine;
 
 public class Boi : MonoBehaviour {
@@ -15,6 +12,7 @@ public class Boi : MonoBehaviour {
     private float normalizedHorizontalSpeed = 0;
 
     private Prime31Controller _controller;
+
     //private Animator _animator;
     private RaycastHit2D _lastControllerColliderHit;
     private Vector3 velocity;
@@ -31,34 +29,34 @@ public class Boi : MonoBehaviour {
         if (_controller.isGrounded)
             velocity.y = 0;
 
-        if (Input.GetKey(KeyCode.RightArrow)) {
+        if (Input.GetKey(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D)) {
             normalizedHorizontalSpeed = 1;
             if (transform.localScale.x < 0f)
                 transform.localScale =
                     new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
 
             //if (_controller.isGrounded)
-                //_animator.Play(Animator.StringToHash("Run"));
+            //_animator.Play(Animator.StringToHash("Run"));
         }
-        else if (Input.GetKey(KeyCode.LeftArrow)) {
+        else if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A)) {
             normalizedHorizontalSpeed = -1;
             if (transform.localScale.x > 0f)
                 transform.localScale =
                     new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
 
             //if (_controller.isGrounded)
-                //_animator.Play(Animator.StringToHash("Run"));
+            //_animator.Play(Animator.StringToHash("Run"));
         }
         else {
             normalizedHorizontalSpeed = 0;
 
             //if (_controller.isGrounded)
-                //_animator.Play(Animator.StringToHash("Idle"));
+            //_animator.Play(Animator.StringToHash("Idle"));
         }
 
 
         // we can only jump whilst grounded
-        if (_controller.isGrounded && Input.GetKeyDown(KeyCode.UpArrow)) {
+        if (_controller.isGrounded && (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))) {
             velocity.y = Mathf.Sqrt(2f * jumpHeight * -gravity);
             //_animator.Play(Animator.StringToHash("Jump"));
         }
@@ -75,7 +73,7 @@ public class Boi : MonoBehaviour {
 
         // if holding down bump up our movement amount and turn off one way platform detection for a frame.
         // this lets us jump down through one way platforms
-        if (_controller.isGrounded && Input.GetKey(KeyCode.DownArrow)) {
+        if (_controller.isGrounded && (Input.GetKey(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))) {
             velocity.y *= 3f;
             _controller.ignoreOneWayPlatformsThisFrame = true;
         }
