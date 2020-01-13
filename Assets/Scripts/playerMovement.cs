@@ -1,7 +1,7 @@
 ﻿using Prime31;
 using UnityEngine;
 
-public class Boi : MonoBehaviour {
+public class playerMovement : MonoBehaviour {
     // movement config
     public float gravity = -25f;
     public float runSpeed = 8f;
