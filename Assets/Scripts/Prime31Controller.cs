@@ -221,11 +221,11 @@ namespace Prime31 {
                 handleVerticalSlope(ref deltaMovement);
 
             // now we check movement in the horizontal dir
-            if (deltaMovement.x.EqualsZero())
+            if (!deltaMovement.x.EqualsZero())
                 moveHorizontally(ref deltaMovement);
 
             // next, check movement in the vertical dir
-            if (deltaMovement.y.EqualsZero())
+            if (!deltaMovement.y.EqualsZero())
                 moveVertically(ref deltaMovement);
 
             // move then update our state
@@ -458,7 +458,7 @@ namespace Prime31 {
 
                     // this is a hack to deal with the top of slopes. if we walk up a slope and reach the apex we can get in a situation
                     // where our ray gets a hit that is less then skinWidth causing us to be ungrounded the next frame due to residual velocity.
-                    if (!isGoingUp && deltaMovement.y.EqualsZero())
+                    if (!isGoingUp && !deltaMovement.y.EqualsZero())
                         _isGoingUpSlope = true;
 
                     // we add a small fudge factor for the float operations here. if our rayDistance is smaller
@@ -498,7 +498,7 @@ namespace Prime31 {
                 if (isMovingDownSlope) {
                     // going down we want to speed up in most cases so the slopeSpeedMultiplier curve should be > 1 for negative angles
                     //var slopeModifier = slopeSpeedMultiplier.Evaluate(-angle);
-                    //var slopeModifier = 1;
+                    var slopeModifier = 1;
                     // we add the extra downward movement here to ensure we "stick" to the surface below
                     deltaMovement.y += _raycastHit.point.y - slopeRay.y - skinWidth;
                     //deltaMovement = new Vector3(0, deltaMovement.y, 0) +

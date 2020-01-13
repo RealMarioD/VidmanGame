@@ -26,6 +26,7 @@ public class playerMovement : MonoBehaviour {
 
     // the Update loop contains a very simple example of moving the character around and controlling the animation
     void Update() {
+        print(_controller.isGrounded);
         if (_controller.isGrounded)
             velocity.y = 0;
 
