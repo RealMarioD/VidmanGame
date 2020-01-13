@@ -228,6 +228,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e78cdcc13908a544b9995708c1875be2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  score: 0
   gravity: -25
   runSpeed: 8
   groundDamping: 20
@@ -249,7 +250,7 @@ MonoBehaviour:
   _skinWidth: 0.02
   platformMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   triggerMask:
     serializedVersion: 2
     m_Bits: 256
