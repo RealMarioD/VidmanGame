@@ -133,6 +133,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: platform (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4344625547427133389, guid: 5c99b4e2d6cae7c48b7d090956965091,
+        type: 3}
+      propertyPath: m_LocalAABB.m_Center.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4344625547427133389, guid: 5c99b4e2d6cae7c48b7d090956965091,
+        type: 3}
+      propertyPath: m_LocalAABB.m_Extent.x
+      value: 2.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4344625547427133389, guid: 5c99b4e2d6cae7c48b7d090956965091,
+        type: 3}
+      propertyPath: m_LocalAABB.m_Center.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4344625547427133389, guid: 5c99b4e2d6cae7c48b7d090956965091,
+        type: 3}
+      propertyPath: m_LocalAABB.m_Extent.y
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4344625547427133390, guid: 5c99b4e2d6cae7c48b7d090956965091,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -222,6 +242,46 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[2].y
       value: 0.0009999936
+      objectReference: {fileID: 0}
+    - target: {fileID: 5179699127723882599, guid: 5c99b4e2d6cae7c48b7d090956965091,
+        type: 3}
+      propertyPath: m_Points.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5179699127723882599, guid: 5c99b4e2d6cae7c48b7d090956965091,
+        type: 3}
+      propertyPath: m_Points.Array.data[1].x
+      value: 2.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5179699127723882599, guid: 5c99b4e2d6cae7c48b7d090956965091,
+        type: 3}
+      propertyPath: m_Points.Array.data[2].x
+      value: 2.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5179699127723882599, guid: 5c99b4e2d6cae7c48b7d090956965091,
+        type: 3}
+      propertyPath: m_Points.Array.data[0].x
+      value: -2.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5179699127723882599, guid: 5c99b4e2d6cae7c48b7d090956965091,
+        type: 3}
+      propertyPath: m_Points.Array.data[0].y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5179699127723882599, guid: 5c99b4e2d6cae7c48b7d090956965091,
+        type: 3}
+      propertyPath: m_Points.Array.data[1].y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5179699127723882599, guid: 5c99b4e2d6cae7c48b7d090956965091,
+        type: 3}
+      propertyPath: m_Points.Array.data[2].y
+      value: 0.0009999936
+      objectReference: {fileID: 0}
+    - target: {fileID: 5179699127723882599, guid: 5c99b4e2d6cae7c48b7d090956965091,
+        type: 3}
+      propertyPath: m_EdgeRadius
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c99b4e2d6cae7c48b7d090956965091, type: 3}
@@ -432,41 +492,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 844e4e4777b8ad54ca1d3523bf2e6e7f, type: 3}
---- !u!1 &2073524691 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4344625547427133387, guid: 5c99b4e2d6cae7c48b7d090956965091,
-    type: 3}
-  m_PrefabInstance: {fileID: 4344625548424400408}
-  m_PrefabAsset: {fileID: 0}
---- !u!68 &2073524692
-EdgeCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2073524691}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
-  m_Points:
-  - {x: -2.249963, y: -0.0044081123}
-  - {x: -2.249963, y: -0.0044081123}
-  - {x: -1.3606592, y: 0.026805887}
-  - {x: -0.66370213, y: 0.07481027}
-  - {x: 0.1938724, y: 0.16021208}
-  - {x: 0.7761042, y: 0.23761964}
-  - {x: 1.143886, y: 0.29350784}
-  - {x: 1.6322513, y: 0.3813957}
-  - {x: 2.1181583, y: 0.48519227}
-  - {x: 2.5930839, y: 0.6062089}
-  - {x: 3.0485036, y: 0.74575603}
-  - {x: 3.4759288, y: 0.9051566}
-  - {x: 3.7101376, y: 0.9924996}
 --- !u!1001 &2143028885
 PrefabInstance:
   m_ObjectHideFlags: 0
