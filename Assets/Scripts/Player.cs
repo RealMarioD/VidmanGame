@@ -1,7 +1,12 @@
-﻿using Prime31;
+﻿using System;
+using Prime31;
 using UnityEngine;
 
-public class playerMovement : MonoBehaviour {
+public class Player : MonoBehaviour {
+    
+    // stats
+    public int score = 0;
+    
     // movement config
     public float gravity = -25f;
     public float runSpeed = 8f;
@@ -12,7 +17,6 @@ public class playerMovement : MonoBehaviour {
     private float normalizedHorizontalSpeed = 0;
 
     private Prime31Controller _controller;
-
     //private Animator _animator;
     private RaycastHit2D _lastControllerColliderHit;
     private Vector3 velocity;
@@ -23,10 +27,20 @@ public class playerMovement : MonoBehaviour {
         _controller = GetComponent<Prime31Controller>();
     }
 
+    private void OnCollisionEnter2D(Collision2D other) {
+        print("A");
+        print(other.gameObject.name);
+        if (other.gameObject.name.Contains("Coin")) {
+            score += 10;
+            // TODO play some sound
+            // TODO display some score somewhere on the screen
+            Destroy(other.gameObject);
+        }
+    }
 
     // the Update loop contains a very simple example of moving the character around and controlling the animation
     void Update() {
-        print(_controller.isGrounded);
+        
         if (_controller.isGrounded)
             velocity.y = 0;
 
