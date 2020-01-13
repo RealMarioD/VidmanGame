@@ -9,6 +9,6 @@ public static class Util {
     }
 
     public static bool EqualsZero(this float n1) {
-        return Equals(n1, 0);
+        return Equals(n1, 0f);
     }
 }

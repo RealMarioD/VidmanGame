@@ -93,10 +93,11 @@ GameObject:
   m_Component:
   - component: {fileID: 7309941445361216219}
   - component: {fileID: 8050460045954273287}
-  - component: {fileID: 1995864151}
   - component: {fileID: 3219623173819997807}
   - component: {fileID: 6940596755551029405}
   - component: {fileID: 3465894361703710597}
+  - component: {fileID: 4941840538024244636}
+  - component: {fileID: 1617972309}
   m_Layer: 0
   m_Name: player
   m_TagString: Untagged
@@ -169,23 +170,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1995864151
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3445672148708743539}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5d96abe7e334ba45a461678ab104309, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gravity: -25
-  runSpeed: 8
-  groundDamping: 20
-  inAirDamping: 5
-  jumpHeight: 3
 --- !u!61 &3219623173819997807
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -211,7 +195,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 0.7, y: 1.76}
-  m_EdgeRadius: 0
+  m_EdgeRadius: 0.01
 --- !u!50 &6940596755551029405
 Rigidbody2D:
   serializedVersion: 4
@@ -293,3 +277,37 @@ MonoBehaviour:
     m_RotationOrder: 4
   totalHorizontalRays: 8
   totalVerticalRays: 4
+--- !u!114 &4941840538024244636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3445672148708743539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e78cdcc13908a544b9995708c1875be2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gravity: -25
+  runSpeed: 8
+  groundDamping: 20
+  inAirDamping: 5
+  jumpHeight: 3
+--- !u!114 &1617972309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3445672148708743539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e78cdcc13908a544b9995708c1875be2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gravity: -25
+  runSpeed: 8
+  groundDamping: 20
+  inAirDamping: 5
+  jumpHeight: 3
