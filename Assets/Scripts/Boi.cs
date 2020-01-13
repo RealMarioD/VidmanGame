@@ -29,7 +29,7 @@ public class Boi : MonoBehaviour {
         if (_controller.isGrounded)
             velocity.y = 0;
 
-        if (Input.GetKey(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D)) {
+        if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D)) {
             normalizedHorizontalSpeed = 1;
             if (transform.localScale.x < 0f)
                 transform.localScale =
@@ -38,7 +38,7 @@ public class Boi : MonoBehaviour {
             //if (_controller.isGrounded)
             //_animator.Play(Animator.StringToHash("Run"));
         }
-        else if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A)) {
+        else if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A)) {
             normalizedHorizontalSpeed = -1;
             if (transform.localScale.x > 0f)
                 transform.localScale =
@@ -73,7 +73,7 @@ public class Boi : MonoBehaviour {
 
         // if holding down bump up our movement amount and turn off one way platform detection for a frame.
         // this lets us jump down through one way platforms
-        if (_controller.isGrounded && (Input.GetKey(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))) {
+        if (_controller.isGrounded && (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))) {
             velocity.y *= 3f;
             _controller.ignoreOneWayPlatformsThisFrame = true;
         }

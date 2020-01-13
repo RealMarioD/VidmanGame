@@ -11,6 +11,20 @@
           <e p="Boi.cs" t="Include" />
           <e p="Prime31Controller.cs" t="Include" />
         </e>
+        <e p="Unity Technologies" t="Include">
+          <e p="2D Sprite Shape" t="Include">
+            <e p="Extras" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="Clipper.cs" t="Include" />
+                <e p="ConformingSpline.cs" t="Include" />
+                <e p="GeometryCollider.cs" t="Include" />
+                <e p="LegacyCollider.cs" t="Include" />
+                <e p="SimpleDraw.cs" t="Include" />
+                <e p="Sprinkler.cs" t="Include" />
+              </e>
+            </e>
+          </e>
+        </e>
       </e>
       <e p="obj" t="ExcludeRecursive" />
       <e p="Packages" t="ExcludeRecursive" />
