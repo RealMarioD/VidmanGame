@@ -572,11 +572,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: player
       objectReference: {fileID: 0}
-    - target: {fileID: 4416471622336945442, guid: 689cd5f87c2718e468cb4e5a1d5a2b30,
-        type: 3}
-      propertyPath: slopeLimit
-      value: 90
-      objectReference: {fileID: 0}
     - target: {fileID: 4941840538024244636, guid: 689cd5f87c2718e468cb4e5a1d5a2b30,
         type: 3}
       propertyPath: m_Enabled

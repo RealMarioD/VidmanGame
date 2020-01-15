@@ -28,8 +28,6 @@ public class Player : MonoBehaviour {
     }
 
     private void OnCollisionEnter2D(Collision2D other) {
-        print("A");
-        print(other.gameObject.name);
         if (other.gameObject.name.Contains("Coin")) {
             score += 10;
             // TODO play some sound
@@ -71,7 +69,7 @@ public class Player : MonoBehaviour {
 
 
         // we can only jump whilst grounded
-        if (_controller.isGrounded && (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))) {
+        if (_controller.isGrounded && (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))) {
             velocity.y = Mathf.Sqrt(2f * jumpHeight * -gravity);
             //_animator.Play(Animator.StringToHash("Jump"));
         }
