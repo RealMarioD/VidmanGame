@@ -9,6 +9,7 @@
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
           <e p="Player.cs" t="Include" />
+          <e p="Player2.cs" t="Include" />
           <e p="Prime31Controller.cs" t="Include" />
           <e p="Util.cs" t="Include" />
         </e>
