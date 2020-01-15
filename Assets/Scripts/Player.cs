@@ -2,7 +2,7 @@
 using Prime31;
 using UnityEngine;
 
-public class Player : MonoBehaviour {
+public class Player : Script {
     
     // stats
     public int score = 0;
