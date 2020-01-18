@@ -4,7 +4,7 @@ using UnityEngine;
 public class Script : MonoBehaviour {
     protected GameManager gm;
 
-    void Awake() {
+    protected virtual void Awake() {
         gm = FindObjectOfType<GameManager>();
     }
 }

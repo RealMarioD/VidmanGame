@@ -3,10 +3,7 @@ using Prime31;
 using UnityEngine;
 
 public class Player : Script {
-    
-    // stats
-    public int score = 0;
-    
+
     // movement config
     public float gravity = -25f;
     public float runSpeed = 8f;
@@ -22,16 +19,17 @@ public class Player : Script {
     private Vector3 velocity;
 
 
-    void Awake() {
+    protected override void Awake() {
+        base.Awake();
         //_animator = GetComponent<Animator>();
         _controller = GetComponent<Prime31Controller>();
     }
 
     private void OnCollisionEnter2D(Collision2D other) {
         if (other.gameObject.name.Contains("Coin")) {
-            score += 10;
+            gm.coins += 1;
+            gm.OnCoinsChangeEvent(gm.coins);
             // TODO play some sound
-            // TODO display some score somewhere on the screen
             Destroy(other.gameObject);
         }
     }
