@@ -4,7 +4,11 @@ using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 
 public class SaveSystem {
-    public static readonly string PATH = Path.Combine(Application.persistentDataPath, "save.dat");
+    public static string PATH;
+
+    public SaveSystem() {
+        PATH = Path.Combine(Application.persistentDataPath, "save.dat");
+    }
 
     public SaveGame loadGame() {
         var fs = File.Open(PATH, FileMode.Open);
