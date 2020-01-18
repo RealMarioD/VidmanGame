@@ -6,10 +6,6 @@ using UnityEngine;
 public class SaveSystem {
     public static readonly string PATH = Path.Combine(Application.persistentDataPath, "save.dat");
 
-    public SaveSystem() {
-        // nothing so far
-    }
-
     public SaveGame loadGame() {
         var fs = File.Open(PATH, FileMode.Open);
         return (SaveGame) new BinaryFormatter().Deserialize(fs);
