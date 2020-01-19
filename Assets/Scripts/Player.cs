@@ -1,9 +1,9 @@
-﻿using Prime31;
+﻿using System;
+using Prime31;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using gm = VidmanGame.GameManager;
 
-public class Player : MonoBehaviour {
+public class Player : Script {
 
     // movement config
     public float gravity = -25f;
@@ -28,10 +28,10 @@ public class Player : MonoBehaviour {
     #endregion
 
 
-    protected void Awake() {
+    protected override void Awake() {
+        base.Awake();
         //_animator = GetComponent<Animator>();
         _controller = GetComponent<Prime31Controller>();
-        gm.Awake();
     }
 
     private void OnCollisionEnter2D(Collision2D other) {
