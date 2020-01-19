@@ -2,8 +2,9 @@
 using Prime31;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using gm = vidmanGame.GameManager;
 
-public class Player : Script {
+public class Player : MonoBehaviour {
 
     // movement config
     public float gravity = -25f;
@@ -22,14 +23,13 @@ public class Player : Script {
     #region ResetVars
     private static readonly float resetY = -6.84f; //Below this coordinate the level will reset
     private int levelNum => gm.levelNum;
-
     #endregion
 
 
-    protected override void Awake() {
-        base.Awake();
+    protected void Awake() {
         //_animator = GetComponent<Animator>();
         _controller = GetComponent<Prime31Controller>();
+        gm.Awake();
     }
 
     private void OnCollisionEnter2D(Collision2D other) {

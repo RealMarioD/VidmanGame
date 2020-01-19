@@ -2,8 +2,9 @@ using System;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
+using vidmanGame;
 
-public class SaveSystem {
+public class SaveSystem : MonoBehaviour {
     public static string PATH;
 
     public SaveSystem() {
@@ -18,6 +19,11 @@ public class SaveSystem {
     public void saveGame(SaveGame save) {
         var fs = File.OpenWrite(PATH);
         new BinaryFormatter().Serialize(fs, save);
+    }
+
+    void Start()
+    {
+        GameManager.saveSystem=this;
     }
 }
 

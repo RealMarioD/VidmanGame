@@ -1,23 +1,28 @@
 using System;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour {
-    
-    public SaveSystem saveSystem;
-    
-    // Events
-    public event Action<int> CoinsChangeEvent;
-    
-    // Game data
-    public int coins;
-    public int levelNum {get; private set;} = 1;
-    void Awake() {
-        saveSystem = new SaveSystem();
-        DontDestroyOnLoad(this);
-        Application.targetFrameRate = 60;
-    }
+namespace vidmanGame
+{
+    public static class GameManager
+    {
 
-    public void OnCoinsChangeEvent(int c) {
-        CoinsChangeEvent?.Invoke(c);
+        public static SaveSystem saveSystem;
+
+        // Events
+        public static  event Action<int> CoinsChangeEvent;
+
+        // Game data
+        public static int coins;
+        public static int levelNum { get; private set; } = 1;
+        public static void Awake()
+        {
+            saveSystem = new SaveSystem();
+            Application.targetFrameRate = 60;
+        }
+
+        public static void OnCoinsChangeEvent(int c)
+        {
+            CoinsChangeEvent?.Invoke(c);
+        }
     }
 }
