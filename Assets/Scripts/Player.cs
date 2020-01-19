@@ -1,6 +1,7 @@
 ﻿using System;
 using Prime31;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : Script {
 
@@ -17,6 +18,12 @@ public class Player : Script {
     //private Animator _animator;
     private RaycastHit2D _lastControllerColliderHit;
     private Vector3 velocity;
+
+    #region ResetVars
+    private static readonly float resetY = -6.84f; //Below this coordinate the level will reset
+    private int levelNum => gm.levelNum;
+
+    #endregion
 
 
     protected override void Awake() {
@@ -93,6 +100,10 @@ public class Player : Script {
 
         // grab our current velocity to use as a base for all calculations
         velocity = _controller.velocity;
-    }
 
+        if(transform.position.y<resetY){
+            SceneManager.LoadScene($"Level{levelNum}");
+            gm.OnCoinsChangeEvent(0);
+        }
+    }
 }

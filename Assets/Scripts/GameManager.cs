@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour {
     
     // Game data
     public int coins;
+    public int levelNum {get; private set;} = 1;
     void Awake() {
         saveSystem = new SaveSystem();
         DontDestroyOnLoad(this);
