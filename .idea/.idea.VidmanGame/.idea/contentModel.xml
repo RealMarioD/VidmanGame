@@ -12,7 +12,9 @@
           <e p="Player.cs" t="Include" />
           <e p="Prime31Controller.cs" t="Include" />
           <e p="SaveSystem.cs" t="Include" />
+          <e p="Script.cs" t="Include" />
           <e p="UI" t="Include">
+            <e p="ActualConsole.cs" t="Include" />
             <e p="CoinText.cs" t="Include" />
             <e p="Console.cs" t="Include" />
             <e p="UISystem.cs" t="Include" />
