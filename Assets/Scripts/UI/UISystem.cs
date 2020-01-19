@@ -1,5 +1,6 @@
 public class UISystem {
-    public UIState uiState;
+    public UIState uiState { get; set; }
+
 
     public UISystem() {
         uiState = UIState.Playing; // Initial UI state. will be changed to main menu when it gets implemented!

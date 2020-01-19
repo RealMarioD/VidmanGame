@@ -14,6 +14,7 @@
           <e p="SaveSystem.cs" t="Include" />
           <e p="UI" t="Include">
             <e p="CoinText.cs" t="Include" />
+            <e p="Console.cs" t="Include" />
             <e p="UISystem.cs" t="Include" />
           </e>
           <e p="Util.cs" t="Include" />
