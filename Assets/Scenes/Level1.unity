@@ -1815,6 +1815,11 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4791841189620369533, guid: bc0afeb6f6197f541b0c1b2a0e49274b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -47.774902
+      objectReference: {fileID: 0}
     - target: {fileID: 5305679320397735819, guid: bc0afeb6f6197f541b0c1b2a0e49274b,
         type: 3}
       propertyPath: m_Camera
@@ -1824,6 +1829,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 6683557368150681283, guid: bc0afeb6f6197f541b0c1b2a0e49274b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7184736931897901256, guid: bc0afeb6f6197f541b0c1b2a0e49274b,
         type: 3}

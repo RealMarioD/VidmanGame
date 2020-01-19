@@ -48,6 +48,10 @@ public class Player : Script {
         if (_controller.isGrounded)
             velocity.y = 0;
 
+        if (gm.isConsoleOpen) {
+            goto skipInput;
+        }
+
         if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D)) {
             normalizedHorizontalSpeed = 1;
             if (transform.localScale.x < 0f)
@@ -80,6 +84,8 @@ public class Player : Script {
             //_animator.Play(Animator.StringToHash("Jump"));
         }
 
+        skipInput:
+
 
         // apply horizontal speed smoothing it. dont really do this with Lerp. Use SmoothDamp or something that provides more control
         var smoothedMovementFactor =
@@ -89,13 +95,6 @@ public class Player : Script {
 
         // apply gravity before moving
         velocity.y += gravity * Time.deltaTime;
-
-        // if holding down bump up our movement amount and turn off one way platform detection for a frame.
-        // this lets us jump down through one way platforms
-        if (_controller.isGrounded && (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))) {
-            velocity.y *= 3f;
-            _controller.ignoreOneWayPlatformsThisFrame = true;
-        }
 
         _controller.move(velocity * Time.deltaTime);
 

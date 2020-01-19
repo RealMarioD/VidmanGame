@@ -4,6 +4,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour {
 
     public SaveSystem saveSystem;
+    public CommandHandler commandHandler;
 
     // Events
     public event Action<int> CoinsChangeEvent;
@@ -13,9 +14,12 @@ public class GameManager : MonoBehaviour {
     // Game data
     public int coins;
     public int levelNum { get; private set; } = 1;
+    
+    public bool isConsoleOpen = false;
 
     void Awake() {
         saveSystem = new SaveSystem();
+        commandHandler = new CommandHandler();
         DontDestroyOnLoad(this);
         Application.targetFrameRate = 60;
     }
