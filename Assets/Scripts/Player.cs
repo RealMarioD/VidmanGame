@@ -1,8 +1,7 @@
-﻿using System;
-using Prime31;
+﻿using Prime31;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using gm = vidmanGame.GameManager;
+using gm = VidmanGame.GameManager;
 
 public class Player : MonoBehaviour {
 
@@ -16,13 +15,16 @@ public class Player : MonoBehaviour {
     private float normalizedHorizontalSpeed = 0;
 
     private Prime31Controller _controller;
+
     //private Animator _animator;
     private RaycastHit2D _lastControllerColliderHit;
     private Vector3 velocity;
 
     #region ResetVars
+
     private static readonly float resetY = -6.84f; //Below this coordinate the level will reset
     private int levelNum => gm.levelNum;
+
     #endregion
 
 
@@ -35,7 +37,7 @@ public class Player : MonoBehaviour {
     private void OnCollisionEnter2D(Collision2D other) {
         if (other.gameObject.name.Contains("Coin")) {
             gm.coins += 1;
-            gm.OnCoinsChangeEvent(gm.coins);
+            gm.RaiseCoinsChange(gm.coins);
             // TODO play some sound
             Destroy(other.gameObject);
         }
@@ -43,7 +45,6 @@ public class Player : MonoBehaviour {
 
     // the Update loop contains a very simple example of moving the character around and controlling the animation
     void Update() {
-        
         if (_controller.isGrounded)
             velocity.y = 0;
 
@@ -101,9 +102,9 @@ public class Player : MonoBehaviour {
         // grab our current velocity to use as a base for all calculations
         velocity = _controller.velocity;
 
-        if(transform.position.y<resetY){
+        if (transform.position.y < resetY) {
             SceneManager.LoadScene($"Level{levelNum}");
-            gm.OnCoinsChangeEvent(0);
+            gm.RaiseCoinsChange(0);
         }
     }
 }

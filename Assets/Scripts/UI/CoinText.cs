@@ -1,7 +1,7 @@
-﻿using System;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
-using vidmanGame;
+using VidmanGame;
 
 public class CoinText : MonoBehaviour {
     protected void Awake() {
@@ -11,7 +11,6 @@ public class CoinText : MonoBehaviour {
     }
 
     void onCoinsChanged(int coins) {
-        GameManager.coins=coins;
         GetComponent<Text>().text = $"Coins: {coins}";
     }
 }
