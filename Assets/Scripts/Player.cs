@@ -22,7 +22,7 @@ public class Player : MonoBehaviour {
 
     #region ResetVars
 
-    private static readonly float resetY = -6.84f; //Below this coordinate the level will reset
+    private const float resetY = -6.84f; //Below this coordinate the level will reset
     private int levelNum => gm.levelNum;
 
     #endregion
