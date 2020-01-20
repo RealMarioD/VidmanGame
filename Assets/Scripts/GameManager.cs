@@ -20,7 +20,6 @@ public class GameManager : MonoBehaviour {
     void Awake() {
         saveSystem = new SaveSystem();
         commandHandler = new CommandHandler();
-        DontDestroyOnLoad(this);
         Application.targetFrameRate = 60;
     }
 
