@@ -14,6 +14,7 @@ public class CommandHandler {
         RegisterCommand("conv", ConvertHandler, new List<Argument> {
             new FloatArgument("value")
         }, "Prints a decimal number into the console.");
+        RegisterCommand("help", HelpHandler, new List<Argument>(), "Lists all the commands.");
     }
 
     public string[] ParseCommand(string input) {
@@ -47,6 +48,13 @@ public class CommandHandler {
 
     private void ConvertHandler(string[] args) {
         Debug.Log(args[0]);
+    }
+    
+    private void HelpHandler(string[] args) {
+        foreach (var command in commands.Values) {
+            Debug.Log($"/{command.name} {string.Join(", ", command.args.Select(argument => argument.argName))}" +
+                $"\n({command.helpText}");
+        }
     }
 }
 
